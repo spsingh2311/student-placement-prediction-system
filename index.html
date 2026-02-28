@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Student Placement Prediction</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+<h2>Student Placement Prediction</h2>
+    <h3>Feedback</h3>
+<textarea id="feedback"></textarea>
+<button onclick="submitFeedback()">Submit</button>
+
+<form id="predictionForm">
+    <input type="number" id="tenth" placeholder="10th %" required>
+    <input type="number" id="twelfth" placeholder="12th %" required>
+    <input type="number" id="cgpa" placeholder="CGPA" step="0.01" required>
+    <input type="number" id="communication" placeholder="Communication (1-10)" required>
+    <input type="number" id="projects" placeholder="Projects Completed" required>
+    <input type="file" id="csvFile" accept=".csv">
+<button onclick="trainModel()">Train Model</button>
+
+<p id="trainingStatus"></p>
+
+    <select id="internship">
+        <option value="1">Internship Done</option>
+        <option value="0">No Internship</option>
+    </select>
+
+    <button type="submit">Predict</button>
+    <button onclick="evaluateModel()">Evaluate Model</button>
+    <button onclick="toggleTheme()">Toggle Theme</button>
+</form>
+
+<h3 id="result"></h3>
+<canvas id="chart"></canvas>
+
+<script src="script.js"></script>
+
+</body>
+</html>
